@@ -34,12 +34,12 @@ public class MainController implements Initializable {
 
     @FXML
     public void switchToAddPage() throws IOException {
-        App.setRoot("add-product-panel");
+        App.setRoot("table-panel");
     }
 
     @FXML
     public void switchToTablePage() throws IOException {
-        App.setRoot("table-panel");
+        App.setRoot("add-product-panel");
     }
 
     @FXML

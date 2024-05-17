@@ -14,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("table-panel.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-product-panel.fxml"));
         Parent root = fxmlLoader.load();
         scene = new Scene(root);
         stage.setTitle("Grocery Store");
