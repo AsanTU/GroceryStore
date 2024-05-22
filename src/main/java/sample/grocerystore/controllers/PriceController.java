@@ -1,7 +1,6 @@
-package sample.grocerystore;
+package sample.grocerystore.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class PriceController {

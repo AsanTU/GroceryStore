@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.grocerystore.controllers.NewArrivalsController">
+   <children>
+      <TextField fx:id="nameField" layoutX="375.0" layoutY="100.0" promptText="Name" />
+      <TextField fx:id="quantityField" layoutX="374.0" layoutY="178.0" promptText="Quantity" />
+      <TextField fx:id="pricePerPeaceField" layoutX="375.0" layoutY="257.0" promptText="Price per peace" />
+      <Button fx:id="addBtn" layoutX="410.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#navigateToInventoryPanel" prefHeight="50" prefWidth="100" text="Add" />
+      <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="14.0" layoutY="40.0" onMouseClicked="#navigateToBack" size="30" styleClass="font-awesome-icon"/>
+   </children>
+</AnchorPane>

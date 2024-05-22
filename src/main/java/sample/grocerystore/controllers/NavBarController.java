@@ -1,20 +1,20 @@
-package sample.grocerystore;
+package sample.grocerystore.controllers;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import sample.grocerystore.App;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class NavBarController implements Initializable {
 
     private AddProductController addProductController;
 
-    private TableController tableController;
+    private InventoryManagementController inventoryManagementController;
 
     private PriceController priceController;
 
@@ -27,19 +27,19 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addProductController = new AddProductController();
-        tableController = new TableController();
+        inventoryManagementController = new InventoryManagementController();
         priceController = new PriceController();
-        tableController.setMainController(this);
+        inventoryManagementController.setNavBarController(this);
     }
 
     @FXML
     public void switchToAddPage() throws IOException {
-        App.setRoot("table-panel");
+        App.setRoot("inventory-management-panel");
     }
 
     @FXML
     public void switchToTablePage() throws IOException {
-        App.setRoot("add-product-panel");
+        App.setRoot("product-selection-panel");
     }
 
     @FXML
