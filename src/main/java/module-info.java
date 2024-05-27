@@ -3,6 +3,7 @@ module sample.grocerystore {
     requires javafx.fxml;
     requires de.jensd.fx.glyphs.fontawesome;
     requires jdk.compiler;
+    requires java.sql;
 
 
     opens sample.grocerystore to javafx.fxml;

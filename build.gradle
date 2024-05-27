@@ -20,7 +20,7 @@ ext {
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
   options.encoding = 'UTF-8'
 }
 
@@ -38,7 +38,13 @@ dependencies {
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+  //Font awesome icons
   implementation("de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2")
+  implementation("de.jensd:fontawesomefx-commons:8.9")
+
+  //SQLite database
+  implementation('org.xerial:sqlite-jdbc:3.41.2.2')
 }
 
 test {
@@ -55,4 +61,3 @@ jlink {
 jlinkZip {
   group = 'distribution'
 }
-

@@ -10,28 +10,34 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="tablePane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.grocerystore.controllers.InventoryManagementController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.grocerystore.controllers.InventoryManagementController">
     <left>
-        <fx:include source="navbar.fxml" />
+        <fx:include source="navbar.fxml"/>
     </left>
     <right>
-        <AnchorPane fx:id="addNewProduct" prefHeight="600.0" prefWidth="847.0" BorderPane.alignment="CENTER">
-            <TableView fx:id="table" layoutX="14.0" layoutY="38.0" prefHeight="550.0" prefWidth="750.0" styleClass="table-view">
+        <AnchorPane prefHeight="600.0" prefWidth="847.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="table" layoutX="14.0" layoutY="38.0" prefHeight="550.0" prefWidth="750.0"
+                       styleClass="table-view">
                 <columns>
-                    <TableColumn fx:id="idProduct" prefWidth="40.0" text="ID" />
-                    <TableColumn fx:id="nameProduct" prefWidth="179.0" text="Name" />
-                    <TableColumn fx:id="quantityProduct" prefWidth="179.0" text="Quantity" />
-                    <TableColumn fx:id="pricePerPeaceProduct" prefWidth="179.0" text="Price per peace" />
-                    <TableColumn fx:id="totalPriceProduct" prefWidth="160.0" text="Total price" />
+                    <TableColumn fx:id="idProduct" prefWidth="50.0" text="ID"/>
+                    <TableColumn fx:id="nameProduct" prefWidth="179.0" text="Name"/>
+                    <TableColumn fx:id="quantityProduct" prefWidth="179.0" text="Quantity"/>
+                    <TableColumn fx:id="pricePerPeaceProduct" prefWidth="179.0" text="Price per peace"/>
+                    <TableColumn fx:id="totalPriceProduct" prefWidth="160.0" text="Total price"/>
                 </columns>
                 <opaqueInsets>
-                    <Insets />
+                    <Insets/>
                 </opaqueInsets>
             </TableView>
-            <Text fx:id="titleTable" layoutX="270.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text" text="Table of Products" />
-            <FontAwesomeIconView fx:id="searchFont" glyphName="SEARCH" layoutX="800.0" layoutY="23.0" onMouseClicked="#showTextInput" size="20" styleClass="font-awesome-icon" />
-            <TextField fx:id="textInput" layoutX="660.0" layoutY="4.0" prefHeight="9.0" prefWidth="134.0" styleClass="text-field" visible="false" />
-            <Button layoutX="782.0" layoutY="536.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="circular-button" onMouseClicked="#navigateToAddProductView"/>
+            <Text layoutX="270.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text"
+                  text="Table of Products"/>
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="800.0" layoutY="23.0" onMouseClicked="#showTextInput"
+                                 size="20" styleClass="icon"/>
+            <TextField fx:id="textInput" layoutX="660.0" layoutY="4.0" prefHeight="9.0" prefWidth="134.0"
+                       styleClass="text-field" visible="false"/>
+            <Button layoutX="782.0" layoutY="536.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"
+                    styleClass="circular-button" onMouseClicked="#navigateToAddProductView"/>
             <FontAwesomeIconView glyphName="PLUS" layoutX="799.0" layoutY="568.0" size="20" styleClass="icon-plus"/>
         </AnchorPane>
     </right>

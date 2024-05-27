@@ -5,26 +5,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="navBar" prefHeight="400.0" prefWidth="50.0" style="-fx-background-color: linear-gradient(to bottom, #00CCFF, #0099CC); -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 0 30 30 0; -fx-background-radius: 0 30 30 0; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);"  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.grocerystore.controllers.NavBarController">
-    <children>
-        <VBox layoutY="230.0" prefHeight="119.0" prefWidth="50.0">
-            <children>
-                <FontAwesomeIconView fx:id="tableNavigation" glyphName="HOME" onMouseClicked="#switchToTablePage" size="22" wrappingWidth="13.950006484985352" styleClass="fontawesome-icon-view" >
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="14.0" top="10.0" />
-                    </VBox.margin>
-                </FontAwesomeIconView>
-                <FontAwesomeIconView fx:id="saleNavigation" glyphName="TABLE" layoutX="24.0" layoutY="39.0" onMouseClicked="#switchToAddPage" size="22" wrappingWidth="13.950006484985352" styleClass="fontawesome-icon-view" >
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="14.0" top="10.0" />
-                    </VBox.margin>
-                </FontAwesomeIconView>
-                <FontAwesomeIconView fx:id="priceNavigation" glyphName="ARCHIVE" layoutX="10.0" layoutY="72.0" onMouseClicked="#switchToPricePage" size="22" wrappingWidth="13.950006484985352" styleClass="fontawesome-icon-view" >
-                    <VBox.margin>
-                        <Insets left="14.0" top="10.0" />
-                    </VBox.margin>
-                </FontAwesomeIconView>
-            </children>
-        </VBox>
-    </children>
+<AnchorPane fx:id="navBar" prefHeight="400.0" prefWidth="50.0"
+            style="-fx-background-color: linear-gradient(to bottom, #00CCFF, #0099CC); -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 0 30 30 0; -fx-background-radius: 0 30 30 0; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.grocerystore.controllers.NavBarController">
+    <VBox layoutY="230.0" prefHeight="119.0" prefWidth="50.0">
+        <FontAwesomeIconView glyphName="HOME" onMouseClicked="#switchToTablePage" size="22"
+                             wrappingWidth="13.950006484985352" styleClass="fontawesome-icon-view">
+            <VBox.margin>
+                <Insets bottom="10.0" left="14.0" top="10.0"/>
+            </VBox.margin>
+        </FontAwesomeIconView>
+        <FontAwesomeIconView glyphName="TABLE" layoutX="24.0" layoutY="39.0"
+                             onMouseClicked="#switchToAddPage" size="22" wrappingWidth="13.950006484985352"
+                             styleClass="fontawesome-icon-view">
+            <VBox.margin>
+                <Insets bottom="10.0" left="14.0" top="10.0"/>
+            </VBox.margin>
+        </FontAwesomeIconView>
+        <FontAwesomeIconView glyphName="ARCHIVE" layoutX="10.0" layoutY="72.0"
+                             onMouseClicked="#switchToPricePage" size="22" wrappingWidth="13.950006484985352"
+                             styleClass="fontawesome-icon-view">
+            <VBox.margin>
+                <Insets left="14.0" top="10.0"/>
+            </VBox.margin>
+        </FontAwesomeIconView>
+    </VBox>
 </AnchorPane>
