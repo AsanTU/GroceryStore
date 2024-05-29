@@ -1,68 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.grocerystore.controllers.HistoryController">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.grocerystore.controllers.HistoryController">
     <left>
-        <fx:include source="navbar.fxml"/>
+        <fx:include source="navbar.fxml" />
     </left>
     <center>
         <AnchorPane>
-            <HBox layoutX="7.0" layoutY="14.0" prefHeight="46.0" prefWidth="830.0">
-                <Text fx:id="timeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Time"
-                      wrappingWidth="88.17225646972656">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                    <HBox.margin>
-                        <Insets left="30.0" right="30.0"/>
-                    </HBox.margin>
-                </Text>
-                <Text fx:id="IDtext" layoutX="10.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID"
-                      wrappingWidth="35.372283935546875">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                    <HBox.margin>
-                        <Insets left="50.0" right="30.0"/>
-                    </HBox.margin>
-                </Text>
-                <Text fx:id="nameText" layoutX="87.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name"
-                      wrappingWidth="100.97230529785156">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                    <HBox.margin>
-                        <Insets left="80.0" right="30.0"/>
-                    </HBox.margin>
-                </Text>
-                <Text fx:id="quantityText" layoutX="164.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="Quantity" wrappingWidth="139.3722686767578">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                    <HBox.margin>
-                        <Insets left="30.0" right="30.0"/>
-                    </HBox.margin>
-                </Text>
-                <Text fx:id="priceText" layoutX="240.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="Price" wrappingWidth="79.37220764160156">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                    <HBox.margin>
-                        <Insets left="30.0" right="30.0"/>
-                    </HBox.margin>
-                </Text>
-            </HBox>
-            <ListView fx:id="listForHistory" layoutX="8.0" layoutY="68.0" prefHeight="523.0" prefWidth="826.0"/>
+            <ListView fx:id="listForHistory" layoutX="8.0" layoutY="68.0" prefHeight="523.0" prefWidth="826.0" styleClass="list-view"/>
+         <Text layoutX="351.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="History" styleClass="title-text">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Text>
         </AnchorPane>
     </center>
 </BorderPane>
