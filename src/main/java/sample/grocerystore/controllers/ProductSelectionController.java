@@ -51,7 +51,7 @@ public class ProductSelectionController implements Initializable {
     }
 
     @FXML
-    void handleTableRowClicked() throws IOException {
+    void handleTableRowClicked() {
         if (checkPanelController == null) {
             throw new IllegalStateException("CheckPanelController is not set.");
         }
@@ -63,7 +63,6 @@ public class ProductSelectionController implements Initializable {
             } else {
                 SelectedProducts.addSelectedProduct(selectedProduct);
                 checkPanelController.addProductToCheckPanel(selectedProduct);
-                App.setRoot("check-panel");
             }
         }
     }
@@ -108,6 +107,11 @@ public class ProductSelectionController implements Initializable {
         }));
 
         tableView.setItems(filteredData);
+    }
+
+    @FXML
+    void navigateToCheckPanel() throws IOException {
+        App.setRoot("check-panel");
     }
 
     private void showAlert() {

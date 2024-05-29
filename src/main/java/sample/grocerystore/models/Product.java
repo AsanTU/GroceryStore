@@ -2,6 +2,8 @@ package sample.grocerystore.models;
 
 import javafx.beans.property.*;
 
+import java.time.LocalDateTime;
+
 public class Product {
 
     private final IntegerProperty id;
@@ -9,6 +11,7 @@ public class Product {
     private final IntegerProperty quantity;
     private final DoubleProperty pricePerPeace;
     private final DoubleProperty totalPrice;
+    private LocalDateTime timestamp;
 
     public Product(int id, String name, int quantity, double pricePerPeace, double totalPrice) {
         this.id = new SimpleIntegerProperty(id);
@@ -72,5 +75,13 @@ public class Product {
 
     public DoubleProperty totalPriceProperty() {
         return totalPrice;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }

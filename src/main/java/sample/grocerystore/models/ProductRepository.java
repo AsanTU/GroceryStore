@@ -37,6 +37,7 @@ public class ProductRepository {
             products.add(product);
             insertProductIntoDatabase(product);
             reloadProductsWithSequentialIds();
+            SelectedProducts.addToHistory(product);
         }
     }
 
