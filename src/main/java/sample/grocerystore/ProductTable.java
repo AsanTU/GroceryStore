@@ -15,6 +15,7 @@ public class ProductTable {
                 + " total_price REAL NOT NULL\n"
                 + ");";
 
+
         try (Connection conn = Database.connect();
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
