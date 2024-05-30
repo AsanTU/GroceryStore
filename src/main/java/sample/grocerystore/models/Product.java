@@ -13,13 +13,21 @@ public class Product {
     private final DoubleProperty totalPrice;
     private LocalDateTime timestamp;
 
+    private final int initialQuantity;
+
     public Product(int id, String name, int quantity, double pricePerPeace, double totalPrice) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
         this.quantity = new SimpleIntegerProperty(quantity);
         this.pricePerPeace = new SimpleDoubleProperty(pricePerPeace);
         this.totalPrice = new SimpleDoubleProperty(totalPrice);
+        this.initialQuantity = quantity;
     }
+
+    public int getInitialQuantity() {
+        return initialQuantity;
+    }
+
 
     public int getId() {
         return id.get();

@@ -36,5 +36,9 @@ public class SelectedProducts {
         }
     }
 
-}
+    public static void clearSelectedProducts() {
+        selectedProducts.clear();
+        history.clear();
+    }
 
+}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -12,10 +13,32 @@
     </left>
     <center>
         <AnchorPane>
-            <ListView fx:id="listForHistory" layoutX="8.0" layoutY="68.0" prefHeight="523.0" prefWidth="826.0" styleClass="list-view"/>
-         <Text layoutX="351.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="History" styleClass="title-text">
+            <TableView fx:id="historyTableView" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="800.0">
+                <columns>
+                    <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date" />
+                    <TableColumn fx:id="productNameColumn" prefWidth="200.0" text="Product Name" />
+                    <TableColumn fx:id="quantityColumn" prefWidth="100.0" text="Quantity" />
+                    <TableColumn fx:id="pricePerPieceColumn" prefWidth="150.0" text="Price Per Piece" />
+                    <TableColumn fx:id="totalPriceColumn" prefWidth="150.0" text="Total Price" />
+                </columns>
+            </TableView>
+            <TableView fx:id="todaySalesTableView" layoutX="50.0" layoutY="300.0" prefHeight="200.0" prefWidth="800.0">
+                <columns>
+                    <TableColumn fx:id="todayDateColumn" prefWidth="150.0" text="Date" />
+                    <TableColumn fx:id="todayProductNameColumn" prefWidth="200.0" text="Product Name" />
+                    <TableColumn fx:id="todayQuantityColumn" prefWidth="100.0" text="Quantity" />
+                    <TableColumn fx:id="todayPricePerPieceColumn" prefWidth="150.0" text="Price Per Piece" />
+                    <TableColumn fx:id="todayTotalPriceColumn" prefWidth="150.0" text="Total Price" />
+                </columns>
+            </TableView>
+         <Text layoutX="50.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total history" wrappingWidth="109.33673095703125">
             <font>
-               <Font size="30.0" />
+               <Font size="16.0" />
+            </font>
+         </Text>
+         <Text layoutX="50.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today history" wrappingWidth="109.33673095703125">
+            <font>
+               <Font size="16.0" />
             </font>
          </Text>
         </AnchorPane>

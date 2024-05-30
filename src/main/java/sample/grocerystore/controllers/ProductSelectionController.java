@@ -8,7 +8,8 @@ import sample.grocerystore.App;
 import sample.grocerystore.models.Product;
 import sample.grocerystore.models.ProductRepository;
 import sample.grocerystore.models.SelectedProducts;
-
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.MouseButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,21 +52,30 @@ public class ProductSelectionController implements Initializable {
     }
 
     @FXML
-    void handleTableRowClicked() {
-        if (checkPanelController == null) {
-            throw new IllegalStateException("CheckPanelController is not set.");
-        }
+    void handleTableRowClicked(MouseEvent event) {
+        if (event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 1) {
+            if (checkPanelController == null) {
+                throw new IllegalStateException("CheckPanelController is not set.");
+            }
 
-        Product selectedProduct = tableView.getSelectionModel().getSelectedItem();
-        if (selectedProduct != null) {
-            if (SelectedProducts.getSelectedProducts().contains(selectedProduct)) {
-                showAlert();
-            } else {
-                SelectedProducts.addSelectedProduct(selectedProduct);
-                checkPanelController.addProductToCheckPanel(selectedProduct);
+            Product selectedProduct = tableView.getSelectionModel().getSelectedItem();
+            if (selectedProduct != null) {
+                if (!SelectedProducts.getSelectedProducts().stream().anyMatch(p -> p.getId() == selectedProduct.getId())) {
+                    Product productCopy = new Product(
+                            selectedProduct.getId(),
+                            selectedProduct.getName(),
+                            1,
+                            selectedProduct.getPricePerPiece(),
+                            selectedProduct.getPricePerPiece()
+                    );
+
+                    SelectedProducts.addSelectedProduct(productCopy);
+
+                }
             }
         }
     }
+
 
     private void setupTable() {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
@@ -94,7 +104,6 @@ public class ProductSelectionController implements Initializable {
                 }
             }
         });
-
 
         FilteredList<Product> filteredData = new FilteredList<>(productRepository.getProducts(), p -> true);
 

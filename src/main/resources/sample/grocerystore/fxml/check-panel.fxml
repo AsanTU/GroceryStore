@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.grocerystore.controllers.CheckPanelController">
-    <ListView fx:id="productListView" layoutX="511.0" layoutY="14.0" prefHeight="566.0" prefWidth="348.0" styleClass="list-view" />
+    <ListView fx:id="productListView" layoutX="511.0" layoutY="14.0" prefHeight="534.0" prefWidth="348.0" styleClass="list-view" />
     <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="6.0" layoutY="26.0" onMouseClicked="#navigateToBack" size="30" styleClass="icon" />
     <Text fx:id="productDetailText" layoutX="150.0" layoutY="140.0" styleClass="product-detail-text" wrappingWidth="282.4000244140625" />
     <Text layoutX="150.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text" text="Shopping list">
@@ -16,6 +16,7 @@
             <Font size="40.0" />
         </font>
     </Text>
-   <Button fx:id="decrementBtn" layoutX="381.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#incrementQuantity" text="+" visible="false" styleClass="circular-button"/>
-   <Button fx:id="incrementBtn" layoutX="98.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#decrementQuantity" text="-" visible="false" styleClass="circular-button"/>
+   <Button fx:id="decrementBtn" layoutX="381.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#incrementQuantity" styleClass="circular-button" text="+" visible="false" />
+   <Button fx:id="incrementBtn" layoutX="98.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#decrementQuantity" styleClass="circular-button" text="-" visible="false" />
+   <Button fx:id="sellButton" layoutX="807.0" layoutY="561.0" mnemonicParsing="false" onMouseClicked="#sell" text="Sell" />
 </AnchorPane>

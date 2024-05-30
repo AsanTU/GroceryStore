@@ -21,7 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         ProductTable.createTable();
-
+        Database.createHistoryTable();
         FXMLLoader productSelectionLoader = new FXMLLoader(getClass().getResource("fxml/product-selection-panel.fxml"));
         Parent productSelectionRoot = productSelectionLoader.load();
         productSelectionController = productSelectionLoader.getController();

@@ -11,7 +11,7 @@ public class ProductRepository {
     private static ProductRepository instance;
     private final ObservableList<Product> products;
 
-    public ProductRepository() {
+    private ProductRepository() {
         products = FXCollections.observableArrayList();
         loadProductsFromDatabase();
     }
@@ -21,6 +21,19 @@ public class ProductRepository {
         return instance;
     }
 
+
+    public void sellProduct(Product product) {
+        String sql = "UPDATE products SET quantity = ? WHERE id = ?";
+
+        try (Connection conn = Database.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, product.getQuantity());
+            pstmt.setInt(2, product.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     public ObservableList<Product> getProducts() {
         return products;
     }
@@ -39,6 +52,13 @@ public class ProductRepository {
             reloadProductsWithSequentialIds();
             SelectedProducts.addToHistory(product);
         }
+    }
+
+    public Product getProductById(int id) {
+        for (Product product : products) {
+            if (product.getId() == id) return product;
+        }
+        return null;
     }
 
     private Product findProductByName(String name) {
@@ -71,7 +91,7 @@ public class ProductRepository {
     }
 
     private void insertProductIntoDatabase(Product product) {
-        String sql = "INSERT INTO products(name, quantity, price_per_peace, total_price) VALUES( ?, ?, ?, ?)";
+        String sql = "INSERT INTO products(name, quantity, price_per_peace, total_price) VALUES(?, ?, ?, ?)";
 
         try (Connection conn = Database.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -85,7 +105,7 @@ public class ProductRepository {
         }
     }
 
-    private void updateProductInDatabase(Product product) {
+    public void updateProductInDatabase(Product product) {
         String sql = "UPDATE products SET quantity = ?, price_per_peace = ?, total_price = ? WHERE id = ?";
 
         try (Connection conn = Database.connect();
@@ -100,7 +120,7 @@ public class ProductRepository {
         }
     }
 
-    private void deleteProductFromDatabase(Product product) {
+    public void deleteProductFromDatabase(Product product) {
         String sql = "DELETE FROM products WHERE name = ?";
 
         try (Connection conn = Database.connect();
